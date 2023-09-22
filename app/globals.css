@@ -2,26 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	/* colors */
+	--clr-purple-dark: 256, 48%, 11%;
+	--clr-purple-bluish: 266, 100%, 61%;
+	--clr-purple-pinkish: 288, 99%, 60%;
+	--clr-purple-gradient: 270deg, #903AFF 0%, #FE34B9 100%;
+	/* Fonts */
+	--playfair: "Playfair", Arial, sans-serif;;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.playfair {font-family: var(--playfair);}
+
+.bg-purple-dark {
+	background-color: hsl(var(--clr-purple-dark));
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.bg-purple-blue {
+	background-color: hsl(var(--clr-purple-bluish));
+}
+
+.bg-purple-pink {
+	background-color: hsl(var(--clr-purple-pinkish));
+}
+
+.bg-purple-gradient {
+	background: linear-gradient(var(--clr-purple-gradient));
+}
+
+.text-dark {
+	color: hsl(var(--clr-purple-dark));
+}
+
+.text-blue {
+    color: hsl(var(--clr-purple-bluish));
+}
+
+.text-pink {
+	color: hsl(var(--clr-purple-pinkish));
+}
+
+.container-custom {
+	padding-inline: 1em;
+	margin-inline: auto;
+	max-width: 81.75em;
+}
+
+@media (min-width: 768px) {
+	.container-custom {
+		padding-inline: 1.5em;
+	}
+}
+
+@media (min-width: 568px) {
+	.container-custom {
+		padding-inline: 1em;
+	}
 }
